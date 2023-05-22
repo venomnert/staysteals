@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_20_205519) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_22_180113) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "btree_gin"
   enable_extension "btree_gist"
@@ -36,20 +36,39 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_20_205519) do
   enable_extension "xml2"
 
   create_table "areas", force: :cascade do |t|
-    t.string "city"
-    t.string "airbnb_place_id"
+    t.string "city", null: false
+    t.string "airbnb_place_id", null: false
     t.bigint "state_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["state_id"], name: "index_areas_on_state_id"
   end
 
+  create_table "listings", force: :cascade do |t|
+    t.text "name", null: false
+    t.string "bed", null: false
+    t.float "original_price", null: false
+    t.float "discounted_price"
+    t.float "price_per_night", null: false
+    t.text "zip_code", null: false
+    t.text "url", null: false
+    t.date "posted", null: false
+    t.date "sold_out"
+    t.float "review"
+    t.integer "total_reviews"
+    t.bigint "area_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["area_id"], name: "index_listings_on_area_id"
+  end
+
   create_table "states", force: :cascade do |t|
-    t.string "state"
-    t.string "country"
+    t.string "state", null: false
+    t.string "country", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   add_foreign_key "areas", "states"
+  add_foreign_key "listings", "areas"
 end
