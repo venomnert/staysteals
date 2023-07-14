@@ -38,6 +38,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_22_180113) do
   create_table "areas", force: :cascade do |t|
     t.string "city", null: false
     t.string "airbnb_place_id", null: false
+    t.text "zip_code", null: false
     t.bigint "state_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -48,6 +49,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_22_180113) do
     t.text "name", null: false
     t.string "beds"
     t.float "original_price", null: false
+    t.float "cleaning_fee"
+    t.float "abnb_fee"
     t.float "discounted_price"
     t.float "discount_percentage"
     t.float "price_per_night", null: false

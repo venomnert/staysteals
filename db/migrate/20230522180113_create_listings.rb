@@ -4,6 +4,8 @@ class CreateListings < ActiveRecord::Migration[7.0]
       t.text :name, null: false
       t.string :beds, null: true
       t.float :original_price, null: false
+      t.float :cleaning_fee, null: true
+      t.float :abnb_fee, null: true
       t.float :discounted_price, null: true
       t.float :discount_percentage, null: true
       t.float :price_per_night, null: false
