@@ -15,6 +15,7 @@ class AreasTest < ApplicationSystemTestCase
     click_on "New area"
 
     fill_in "Airbnb place", with: @area.airbnb_place_id
+    fill_in "Vrbo place", with: @area.vrbo_place_id
     fill_in "City", with: @area.city
     fill_in "State", with: @area.state_id
     click_on "Create Area"
@@ -28,6 +29,7 @@ class AreasTest < ApplicationSystemTestCase
     click_on "Edit this area", match: :first
 
     fill_in "Airbnb place", with: @area.airbnb_place_id
+    fill_in "Vrbo place", with: @area.vrbo_place_id
     fill_in "City", with: @area.city
     fill_in "State", with: @area.state_id
     click_on "Update Area"

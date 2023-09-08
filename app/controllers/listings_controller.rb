@@ -4,7 +4,7 @@ class ListingsController < ApplicationController
   # GET /listings or /listings.json
   def index
     @listings = Listing.joins(:area)
-                .select("areas.city, listings.id, listings.name, listings.beds, listings.original_price, listings.cleaning_fee, listings.abnb_fee, listings.discounted_price, listings.discount_percentage, listings.price_per_night, listings.review, listings.total_reviews, listings.url, listings.created_at")
+                .select("areas.city, listings.id, listings.name, listings.beds, listings.original_price, listings.host_fee, listings.platform_fee, listings.discounted_price, listings.discount_percentage, listings.price_per_night, listings.review, listings.total_reviews, listings.url, listings.created_at")
                 .where(listings: { discount_percentage: 0.1..0.7, discounted_price: 0..Float::INFINITY})
                 .order("listings.discount_percentage ASC")
                 .limit(100)
