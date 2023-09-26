@@ -18,9 +18,9 @@ class ListingsTest < ApplicationSystemTestCase
     fill_in "Bed", with: @listing.bed
     fill_in "Discounted price", with: @listing.discounted_price
     fill_in "Name", with: @listing.name
-    fill_in "Original price", with: @listing.original_price
+    fill_in "Original price", with: @listing.price_per_night
     fill_in "Posted", with: @listing.posted
-    fill_in "Price per night", with: @listing.price_per_night
+    fill_in "Price per night", with: @listing.total_price
     fill_in "Review", with: @listing.review
     fill_in "Sold out", with: @listing.sold_out
     fill_in "Total reviews", with: @listing.total_reviews
@@ -40,9 +40,9 @@ class ListingsTest < ApplicationSystemTestCase
     fill_in "Bed", with: @listing.bed
     fill_in "Discounted price", with: @listing.discounted_price
     fill_in "Name", with: @listing.name
-    fill_in "Original price", with: @listing.original_price
+    fill_in "Original price", with: @listing.price_per_night
     fill_in "Posted", with: @listing.posted
-    fill_in "Price per night", with: @listing.price_per_night
+    fill_in "Price per night", with: @listing.total_price
     fill_in "Review", with: @listing.review
     fill_in "Sold out", with: @listing.sold_out
     fill_in "Total reviews", with: @listing.total_reviews

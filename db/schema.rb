@@ -49,12 +49,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_22_180113) do
   create_table "listings", force: :cascade do |t|
     t.text "name", null: false
     t.string "beds"
-    t.float "original_price", null: false
+    t.float "price_per_night", null: false
     t.float "host_fee"
     t.float "platform_fee"
     t.float "discounted_price"
     t.float "discount_percentage"
-    t.float "price_per_night", null: false
+    t.float "total_price", null: false
     t.text "zip_code"
     t.text "url", null: false
     t.date "sold_out"

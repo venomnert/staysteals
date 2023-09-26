@@ -17,7 +17,7 @@ class ListingsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create listing" do
     assert_difference("Listing.count") do
-      post listings_url, params: { listing: { area_id_id: @listing.area_id_id, bed: @listing.bed, discounted_price: @listing.discounted_price, name: @listing.name, original_price: @listing.original_price, posted: @listing.posted, price_per_night: @listing.price_per_night, review: @listing.review, sold_out: @listing.sold_out, total_reviews: @listing.total_reviews, url: @listing.url, zip_code: @listing.zip_code } }
+      post listings_url, params: { listing: { area_id_id: @listing.area_id_id, bed: @listing.bed, discounted_price: @listing.discounted_price, name: @listing.name, price_per_night: @listing.price_per_night, posted: @listing.posted, total_price: @listing.total_price, review: @listing.review, sold_out: @listing.sold_out, total_reviews: @listing.total_reviews, url: @listing.url, zip_code: @listing.zip_code } }
     end
 
     assert_redirected_to listing_url(Listing.last)
@@ -34,7 +34,7 @@ class ListingsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update listing" do
-    patch listing_url(@listing), params: { listing: { area_id_id: @listing.area_id_id, bed: @listing.bed, discounted_price: @listing.discounted_price, name: @listing.name, original_price: @listing.original_price, posted: @listing.posted, price_per_night: @listing.price_per_night, review: @listing.review, sold_out: @listing.sold_out, total_reviews: @listing.total_reviews, url: @listing.url, zip_code: @listing.zip_code } }
+    patch listing_url(@listing), params: { listing: { area_id_id: @listing.area_id_id, bed: @listing.bed, discounted_price: @listing.discounted_price, name: @listing.name, price_per_night: @listing.price_per_night, posted: @listing.posted, total_price: @listing.total_price, review: @listing.review, sold_out: @listing.sold_out, total_reviews: @listing.total_reviews, url: @listing.url, zip_code: @listing.zip_code } }
     assert_redirected_to listing_url(@listing)
   end
 

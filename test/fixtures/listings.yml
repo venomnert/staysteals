@@ -3,9 +3,9 @@
 one:
   name: MyString
   bed: MyString
-  original_price: 1.5
-  discounted_price: 1.5
   price_per_night: 1.5
+  discounted_price: 1.5
+  total_price: 1.5
   zip_code: MyText
   url: MyString
   posted: 2023-05-22
@@ -17,9 +17,9 @@ one:
 two:
   name: MyString
   bed: MyString
-  original_price: 1.5
-  discounted_price: 1.5
   price_per_night: 1.5
+  discounted_price: 1.5
+  total_price: 1.5
   zip_code: MyText
   url: MyString
   posted: 2023-05-22

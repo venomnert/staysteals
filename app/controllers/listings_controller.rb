@@ -4,7 +4,7 @@ class ListingsController < ApplicationController
   # GET /listings or /listings.json
   def index
     @listings = Listing.joins(:area)
-                .select("areas.city, listings.id, listings.name, listings.beds, listings.original_price, listings.host_fee, listings.platform_fee, listings.discounted_price, listings.discount_percentage, listings.price_per_night, listings.review, listings.total_reviews, listings.url, listings.created_at")
+                .select("areas.city, listings.id, listings.name, listings.beds, listings.price_per_night, listings.host_fee, listings.platform_fee, listings.discounted_price, listings.discount_percentage, listings.total_price, listings.review, listings.total_reviews, listings.url, listings.created_at")
                 .where(listings: { discount_percentage: 0.1..0.7, discounted_price: 0..Float::INFINITY})
                 .order("listings.discount_percentage ASC")
                 .limit(100)
@@ -69,6 +69,6 @@ class ListingsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def listing_params
-      params.require(:listing).permit(:name, :beds, :original_price, :discounted_price, :price_per_night, :url, :review, :total_reviews, :city)
+      params.require(:listing).permit(:name, :beds, :price_per_night, :discounted_price, :total_price, :url, :review, :total_reviews, :city)
     end
 end
