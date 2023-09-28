@@ -89,13 +89,6 @@ Area.create(
     "zip_code": "89123",
     "state": nevada,
 )
-# Area.create(
-#     "city": "Las Vegas",
-#     "airbnb_place_id": "ChIJ_ej3yNO9yIARESkJp5yACp8",
-#     "vrbo_place_id": "",
-#     "zip_code": "89135",
-#     "state": nevada,
-# )
 Area.create(
     "city": "Las Vegas",
     "airbnb_place_id": "ChIJidumG1u4yIARPz_7sfsH1xo",
@@ -104,17 +97,17 @@ Area.create(
     "state": nevada,
 )
 Area.create(
+    "city": "Las Vegas",
+    "airbnb_place_id": "ChIJ_ej3yNO9yIARESkJp5yACp8",
+    "vrbo_place_id": "",
+    "zip_code": "89135",
+    "state": nevada,
+)
+Area.create(
     "city": "Memphis",
     "airbnb_place_id": "ChIJvWHMI-941YcRfbf4TbEf0z4",
     "vrbo_place_id": "",
     "zip_code": "38103",
-    "state": tennessee,
-)
-Area.create(
-    "city": "Memphis",
-    "airbnb_place_id": "ChIJNeeFAQN-1YcRwCjrpHdeteI",
-    "vrbo_place_id": "",
-    "zip_code": "38104",
     "state": tennessee,
 )
 Area.create(
@@ -131,13 +124,20 @@ Area.create(
     "zip_code": "38117",
     "state": tennessee,
 )
-# Area.create(
-#     "city": "Memphis",
-#     "airbnb_place_id": "ChIJQaFYwK-cf4gR2apqbn7E3qE",
-#     "vrbo_place_id": "",
-#     "zip_code": "38119",
-#     "state": tennessee,
-# )
+Area.create(
+    "city": "Memphis",
+    "airbnb_place_id": "ChIJNeeFAQN-1YcRwCjrpHdeteI",
+    "vrbo_place_id": "",
+    "zip_code": "38104",
+    "state": tennessee,
+)
+Area.create(
+    "city": "Memphis",
+    "airbnb_place_id": "ChIJQaFYwK-cf4gR2apqbn7E3qE",
+    "vrbo_place_id": "",
+    "zip_code": "38119",
+    "state": tennessee,
+)
 Area.create(
     "city": "Seattle",
     "airbnb_place_id": "ChIJdX85S7RqkFQRE9EwXW31xhE",
@@ -201,20 +201,20 @@ Area.create(
     "zip_code": "33137",
     "state": florida,
 )
-# Area.create(
-#     "city": "New York",
-#     "airbnb_place_id": "ChIJnQClza9ZwokRQ37NEa49KoQ",
-#     "vrbo_place_id": "2621",
-#     "zip_code": "10001",
-#     "state": new_york,
-# )
-# Area.create(
-#     "city": "Canal Street",
-#     "airbnb_place_id": "ChIJJ0lE74pZwokRhNa5sMUkozk",
-#     "vrbo_place_id": "",
-#     "zip_code": "10013",
-#     "state": new_york,
-# )
+Area.create(
+    "city": "New York",
+    "airbnb_place_id": "ChIJnQClza9ZwokRQ37NEa49KoQ",
+    "vrbo_place_id": "2621",
+    "zip_code": "10001",
+    "state": new_york,
+)
+Area.create(
+    "city": "Canal Street",
+    "airbnb_place_id": "ChIJJ0lE74pZwokRhNa5sMUkozk",
+    "vrbo_place_id": "",
+    "zip_code": "10013",
+    "state": new_york,
+)
 Area.create(
     "city": "Brooklyn Heights",
     "airbnb_place_id": "ChIJ10KLdUlawokRxmIQu1GuCHk",
@@ -418,13 +418,13 @@ Area.create(
     "zip_code": "97201",
     "state": oregon,
 )
-# Area.create(
-#     "city": "Portland",
-#     "airbnb_place_id": "ChIJ59Squ5YKlVQRmLvhxrRwTck",
-#     "vrbo_place_id": "",
-#     "zip_code": "97202",
-#     "state": oregon,
-# )
+Area.create(
+    "city": "Portland",
+    "airbnb_place_id": "ChIJ59Squ5YKlVQRmLvhxrRwTck",
+    "vrbo_place_id": "",
+    "zip_code": "97202",
+    "state": oregon,
+)
 Area.create(
     "city": "Portland",
     "airbnb_place_id": "ChIJVRBSmv4JlVQRQLT_opmyqmE",
@@ -481,13 +481,13 @@ Area.create(
     "zip_code": "20016",
     "state": district_of_columbia,
 )
-# Area.create(
-#     "city": "Nashville",
-#     "airbnb_place_id": "ChIJD7DT8Y1mZIgRCjsC-fBCH7g",
-#     "vrbo_place_id": "",
-#     "zip_code": "37203",
-#     "state": tennessee,
-# )
+Area.create(
+    "city": "Nashville",
+    "airbnb_place_id": "ChIJD7DT8Y1mZIgRCjsC-fBCH7g",
+    "vrbo_place_id": "",
+    "zip_code": "37203",
+    "state": tennessee,
+)
 Area.create(
     "city": "Berry Hill",
     "airbnb_place_id": "ChIJTQp0kLZlZIgRy2zdKVnxfzM",
