@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_22_180113) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_26_124850) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "btree_gin"
   enable_extension "btree_gist"
@@ -63,6 +63,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_22_180113) do
     t.bigint "area_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "platform"
     t.index ["area_id"], name: "index_listings_on_area_id"
   end
 
