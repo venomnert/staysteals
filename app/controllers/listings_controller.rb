@@ -3,11 +3,32 @@ class ListingsController < ApplicationController
 
   # GET /listings or /listings.json
   def index
+    @areas = Area.fetch_unique_cities
+    @city = params[:city]
+    
     @listings = Listing.joins(:area)
-                .select("areas.city, listings.id, listings.name, listings.beds, listings.price_per_night, listings.host_fee, listings.platform_fee, listings.discounted_price, listings.discount_percentage, listings.total_price, listings.review, listings.total_reviews, listings.url, listings.created_at")
-                .where(listings: { discount_percentage: 0.1..0.7, discounted_price: 0..Float::INFINITY})
-                .order("listings.discount_percentage ASC")
-                .limit(100)
+    .select("areas.city, listings.id, listings.name, listings.beds, listings.price_per_night, listings.host_fee, listings.platform_fee, listings.discounted_price, listings.discount_percentage, listings.total_price, listings.review, listings.total_reviews, listings.url, listings.created_at")
+    .where(listings: { discount_percentage: 0.1..0.7, discounted_price: 0..Float::INFINITY})
+    .where("areas.city = ?", @city)
+    .order("listings.discount_percentage ASC")
+    .limit(25) 
+  end
+
+  def search
+    @city = params[:city_id]
+
+    redirect_to listings_results_path
+  end
+
+  def results
+    puts "HERERE"
+    @listings = Listing.joins(:area)
+    .select("areas.city, listings.id, listings.name, listings.beds, listings.price_per_night, listings.host_fee, listings.platform_fee, listings.discounted_price, listings.discount_percentage, listings.total_price, listings.review, listings.total_reviews, listings.url, listings.created_at")
+    .where(listings: { discount_percentage: 0.1..0.7, discounted_price: 0..Float::INFINITY})
+    .where("areas.city = ?", @city)
+    .order("listings.discount_percentage ASC")
+    .offset(25)
+    .limit(25) 
   end
 
   # GET /listings/1 or /listings/1.json

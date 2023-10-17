@@ -1,14 +1,22 @@
 <p style="color: green"><%= notice %></p>
 
+<%= turbo_frame_tag "search-results" do %>
+  <%= render 'search_bar/listing_search_bar' %>
+<% end %>
+
 <h1>Listings</h1>
 
-<div id="listings">
-  <% @listings.each do |listing| %>
-    <%= render listing %>
-    <p>
-      <%= link_to "Show this listing", listing %>
-    </p>
-  <% end %>
-</div>
+<% if @listings.present? && @listings.exists? %>
+  <div id="listings">
+    <% @listings.each do |listing| %>
+      <%= render listing %>
+      <p>
+        <%= link_to "Show this listing", listing %>
+      </p>
+    <% end %>
+  </div>
+<% else %>
+  <p>No listings available.</p>
+<% end %>
 
-<%= link_to "New listing", new_listing_path %>
+
