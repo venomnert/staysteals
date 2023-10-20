@@ -15,13 +15,13 @@
 # gem "pg"
 #
 default: &default
-  adapter: postgresql
+  dapter: postgresql
   encoding: unicode
   sslmode: "require"
-  url: "postgres://iiasfdwb:6UZgCnScDPb2Q7JJmJgqUscHwmlHGb_b@drona.db.elephantsql.com/iiasfdwb"
+  url: "postgres://adbrjzwe:5_R_pCPDQF-OQWUj-W4vIScSBYsWjoBr@peanut.db.elephantsql.com/adbrjzwe"
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
-production: &default
+production: 
   adapter: postgresql
   encoding: unicode
   sslmode: "require"
@@ -30,14 +30,8 @@ production: &default
 
 development:
   <<: *default
-  dapter: postgresql
-  encoding: unicode
-  sslmode: "require"
-  url: "postgres://adbrjzwe:5_R_pCPDQF-OQWUj-W4vIScSBYsWjoBr@peanut.db.elephantsql.com/adbrjzwe"
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 test:
-  <<: *default
   dapter: postgresql
   encoding: unicode
   sslmode: "require"
