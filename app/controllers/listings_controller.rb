@@ -7,28 +7,27 @@ class ListingsController < ApplicationController
     @city = params[:city]
     
     @listings = Listing.joins(:area)
-    .select("areas.city, listings.id, listings.name, listings.beds, listings.price_per_night, listings.host_fee, listings.platform_fee, listings.discounted_price, listings.discount_percentage, listings.total_price, listings.review, listings.total_reviews, listings.url, listings.created_at")
-    .where(listings: { discount_percentage: 0.1..0.7, discounted_price: 0..Float::INFINITY})
+    .select("areas.city, listings.id, listings.name, listings.beds, listings.price_per_night, listings.host_fee, listings.platform_fee, listings.discounted_price, listings.discount_percentage, listings.total_price, listings.review, listings.total_reviews, listings.url, listings.pictures, listings.created_at")
     .where("areas.city = ?", @city)
-    .order("listings.discount_percentage ASC")
-    .limit(25) 
+    .limit(10) 
   end
 
   def search
-    @city = params[:city_id]
+    @city  = params[:city_id]
+    @listings = Listing.joins(:area)
+    .select("areas.city, listings.id, listings.name, listings.beds, listings.price_per_night, listings.host_fee, listings.platform_fee, listings.discounted_price, listings.discount_percentage, listings.total_price, listings.review, listings.total_reviews, listings.url, listings.pictures, listings.created_at")
+    .where("areas.city = ?", @city)
+    .limit(10)
 
-    redirect_to listings_results_path
+    redirect_to listings_path(city: @city)
   end
 
   def results
-    puts "HERERE"
+    @city = params[:city_id]
     @listings = Listing.joins(:area)
-    .select("areas.city, listings.id, listings.name, listings.beds, listings.price_per_night, listings.host_fee, listings.platform_fee, listings.discounted_price, listings.discount_percentage, listings.total_price, listings.review, listings.total_reviews, listings.url, listings.created_at")
-    .where(listings: { discount_percentage: 0.1..0.7, discounted_price: 0..Float::INFINITY})
+    .select("areas.city, listings.id, listings.name, listings.beds, listings.price_per_night, listings.host_fee, listings.platform_fee, listings.discounted_price, listings.discount_percentage, listings.total_price, listings.review, listings.total_reviews, listings.url, listings.pictures, listings.created_at")
     .where("areas.city = ?", @city)
-    .order("listings.discount_percentage ASC")
-    .offset(25)
-    .limit(25) 
+    .limit(10) 
   end
 
   # GET /listings/1 or /listings/1.json

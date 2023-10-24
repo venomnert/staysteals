@@ -9,6 +9,6 @@ Rails.application.routes.draw do
 
   post 'main/search', to: 'main#search'
   post 'listings/search', to: 'listings#search', as: :listings_search
-  get 'listings/results', to: 'listings#results', as: :listings_results
+  post 'listings/results', to: 'listings#results', as: :listings_results
 
 end
