@@ -10,17 +10,27 @@
   </p>
 
   <p>
-    <strong>Original price:</strong>
-    <%= listing.price_per_night %>
-  </p>
-
-  <p>
-    <strong>Discounted price:</strong>
-    <%= listing.discounted_price %>
+    <strong>Picture:</strong>
+    <%= image_tag listing.pictures.first[1], width: 400 %>
   </p>
 
   <p>
     <strong>Price per night:</strong>
+    <%= listing.price_per_night %>
+  </p>
+
+  <p>
+  <strong>Host Fee:</strong>
+  <%= listing.host_fee %>
+  </p>
+
+  <p>
+    <strong>Platform Fee:</strong>
+    <%= listing.platform_fee %>
+  </p>
+
+  <p>
+    <strong>Total Price:</strong>
     <%= listing.total_price %>
   </p>
 
