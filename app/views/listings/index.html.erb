@@ -1,7 +1,7 @@
 <p style="color: green"><%= notice %></p>
 
-<%= turbo_frame_tag "search-results" do %>
-  <%= render 'search_bar/listing_search_bar' %>
+<%= form_with url: "/main/search", method: :post do |f| %>
+  <%= render partial: 'search_bar/search_bar', locals: { f: f } %>
 <% end %>
 
 <h1>Listings</h1>
@@ -15,8 +15,7 @@
       </p>
     <% end %>
   </div>
+  <%== pagy_nav(@pagy) %>
 <% else %>
   <p>No listings available.</p>
 <% end %>
-
-

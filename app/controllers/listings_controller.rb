@@ -5,29 +5,14 @@ class ListingsController < ApplicationController
   def index
     @areas = Area.fetch_unique_cities
     @city = params[:city]
-    
     @listings = Listing.joins(:area)
-    .select("areas.city, listings.id, listings.name, listings.beds, listings.price_per_night, listings.host_fee, listings.platform_fee, listings.discounted_price, listings.discount_percentage, listings.total_price, listings.review, listings.total_reviews, listings.url, listings.pictures, listings.created_at")
+    .select("areas.city, listings.id, listings.name, listings.beds, listings.price_per_night, listings.host_fee, listings.platform_fee, listings.discounted_price, listings.discount_percentage, listings.total_price, listings.review, listings.total_reviews, listings.url, listings.pictures, listings.created_at, listings.platform")
     .where("areas.city = ?", @city)
-    .limit(10) 
-  end
 
-  def search
-    @city  = params[:city_id]
-    @listings = Listing.joins(:area)
-    .select("areas.city, listings.id, listings.name, listings.beds, listings.price_per_night, listings.host_fee, listings.platform_fee, listings.discounted_price, listings.discount_percentage, listings.total_price, listings.review, listings.total_reviews, listings.url, listings.pictures, listings.created_at")
-    .where("areas.city = ?", @city)
-    .limit(10)
+    @pagy, @listings = pagy(@listings)
 
-    redirect_to listings_path(city: @city)
-  end
-
-  def results
-    @city = params[:city_id]
-    @listings = Listing.joins(:area)
-    .select("areas.city, listings.id, listings.name, listings.beds, listings.price_per_night, listings.host_fee, listings.platform_fee, listings.discounted_price, listings.discount_percentage, listings.total_price, listings.review, listings.total_reviews, listings.url, listings.pictures, listings.created_at")
-    .where("areas.city = ?", @city)
-    .limit(10) 
+  rescue Pagy::OverflowError
+    redirect_to root_path
   end
 
   # GET /listings/1 or /listings/1.json
