@@ -1,5 +1,10 @@
 <div id="<%= dom_id listing %>">
   <p>
+    <strong>Platform:</strong>
+    <%= listing.platform %>
+  </p>
+ 
+  <p>
     <strong>Name:</strong>
     <%= listing.name %>
   </p>
@@ -9,10 +14,18 @@
     <%= listing.beds %>
   </p>
 
-  <p>
-    <strong>Picture:</strong>
-    <%= image_tag listing.pictures.first[1], width: 400 %>
-  </p>
+  <p>The value of my_variable is <%= listing.pictures.first %></p>
+  <strong>Picture:</strong>
+  <% if listing.pictures.first %>
+    <p>
+      <%= image_tag listing.pictures.first[1], width: 400 %>
+    </p>
+  <% else %>
+    <p>
+      <%= image_tag "missing_images.png", width: 400 %>
+    </p>
+  <% end %>
+
 
   <p>
     <strong>Price per night:</strong>
