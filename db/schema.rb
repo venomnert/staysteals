@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_22_134633) do
+ActiveRecord::Schema[7.0].define(version: 2023_10_26_102548) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "btree_gin"
   enable_extension "btree_gist"
@@ -72,6 +72,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_22_134633) do
     t.index ["area_id"], name: "index_listings_on_area_id"
   end
 
+  create_table "pricingavgs", force: :cascade do |t|
+    t.date "year"
+    t.date "week_of_year"
+    t.bigint "area_id", null: false
+    t.float "average"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["area_id"], name: "index_pricingavgs_on_area_id"
+  end
+
   create_table "states", force: :cascade do |t|
     t.string "state", null: false
     t.string "country", null: false
@@ -81,4 +91,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_22_134633) do
 
   add_foreign_key "areas", "states"
   add_foreign_key "listings", "areas"
+  add_foreign_key "pricingavgs", "areas"
 end
