@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_26_102548) do
+ActiveRecord::Schema[7.0].define(version: 2023_10_26_112803) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "btree_gin"
   enable_extension "btree_gist"
@@ -79,6 +79,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_26_102548) do
     t.float "average"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "city"
     t.index ["area_id"], name: "index_pricingavgs_on_area_id"
   end
 
