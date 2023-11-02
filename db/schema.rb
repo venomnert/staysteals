@@ -73,8 +73,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_26_102548) do
   end
 
   create_table "pricingavgs", force: :cascade do |t|
-    t.date "year"
-    t.date "week_of_year"
+    t.integer "year"
+    t.integer "week_of_year"
     t.bigint "area_id", null: false
     t.string "city"
     t.float "price_per_night_average"
