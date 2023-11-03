@@ -5,10 +5,8 @@ class ListingsController < ApplicationController
   def index
     @areas = Area.fetch_unique_cities
     @city = params[:city]
-    @listings = Listing.joins(:area)
-    .select("areas.city, listings.id, listings.name, listings.beds, listings.price_per_night, listings.host_fee, listings.platform_fee, listings.discounted_price, listings.discount_percentage, listings.total_price, listings.review, listings.total_reviews, listings.url, listings.pictures, listings.created_at, listings.platform")
-    .where("areas.city = ?", @city)
-
+    @listings = Listing.default_search(@city)
+    @listings = Listing.where(id: @listings.map(&:id))
     @pagy, @listings = pagy(@listings)
 
   rescue Pagy::OverflowError
