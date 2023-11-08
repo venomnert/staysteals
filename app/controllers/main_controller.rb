@@ -5,7 +5,8 @@ class MainController < ApplicationController
 
     def search
         city = params[:city_id]
-        redirect_to listings_path(city: city)        
+        check_in = params[:check_in]
+        redirect_to listings_path(city: city, check_in: check_in)        
     end
     
 end
