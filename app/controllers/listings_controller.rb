@@ -5,8 +5,19 @@ class ListingsController < ApplicationController
   def index
     @areas = Area.fetch_unique_cities
     @city = params[:city]
-    @listings = Listing.default_search(@city)
-    @listings = Listing.where(id: @listings.map(&:id))
+    @check_in = params[:check_in]
+    @platform = params[:platform]
+    @below_avg = params[:below_avg]
+    if @platform != nil
+      if @below_avg
+        @listings = Listing.default_search(@city, @check_in).platform(@platform).below_avg()
+      else
+        @listings = Listing.default_search(@city, @check_in).platform(@platform)
+      end
+    else
+      @listings = Listing.default_search(@city, @check_in)
+    end
+
     @pagy, @listings = pagy(@listings)
 
   rescue Pagy::OverflowError
