@@ -4,6 +4,11 @@
   <%= render partial: 'search_bar/search_bar', locals: { f: f } %>
 <% end %>
 
+<%= link_to 'Filter for VRBO', listings_path(request.parameters.merge({ :platform => 'VRBO'})) %>
+<%= link_to 'Filter for ABNB', listings_path(request.parameters.merge({ :platform => 'ABNB'})) %>
+<%= link_to 'below avg nightly rate', listings_path(request.parameters.merge({ :below_avg => 'true'})) %>
+<%= link_to 'reset', "/" %>
+
 <h1>Listings</h1>
 
 <% if @listings.present? && @listings.exists? %>
