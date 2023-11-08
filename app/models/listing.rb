@@ -3,7 +3,7 @@ class Listing < ApplicationRecord
 
   scope :default_search, ->(city, check_in) {
     joins(:area)
-    .where("areas.city = :city AND DATE(listings.checkin_date) = DATE(:check_in) AND DATE(listings.created_at) = DATE(CURRENT_DATE - 1) AND listings.price_per_night > 0 AND listings.total_reviews > 0", city: city, check_in: check_in)
+    .where("areas.city = :city AND DATE(listings.checkin_date) = DATE(:check_in) AND DATE(listings.created_at) = DATE(CURRENT_DATE) AND listings.price_per_night > 0 AND listings.total_reviews > 0", city: city, check_in: check_in)
   }
 
   scope :below_avg, -> {
