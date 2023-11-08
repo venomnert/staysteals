@@ -16,7 +16,7 @@
 
   <p>The value of my_variable is <%= listing.pictures.first %></p>
   <strong>Picture:</strong>
-  <% if listing.pictures.first %>
+  <% if listing.pictures != nil && listing.pictures.first %>
     <p>
       <%= image_tag listing.pictures.first[1], width: 400 %>
     </p>
@@ -49,7 +49,7 @@
 
   <p>
     <strong>Url:</strong>
-    <%= listing.url %>
+    <a target="_blank" rel="nofollow" href="https://<%= listing.url %>">Check Availability </a>
   </p>
 
   <p>
@@ -61,5 +61,5 @@
     <strong>Total reviews:</strong>
     <%= listing.total_reviews %>
   </p>
-  
+
 </div>
