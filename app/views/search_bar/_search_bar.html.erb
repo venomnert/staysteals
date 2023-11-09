@@ -1,37 +1,38 @@
-<div class="form-group">
-  <%= f.label :city_id, "Where are you travelling to:" %>
-  <%= f.select :city_id do %>
-    <% @areas.each do |area| %>
-      <%= content_tag :option, area.city, value: area.city %>
+<div class="h-96 bg-gray-900 flex items-center justify-center">
+  <div class="relative inline-block text-left">
+    <%= f.label :city_id, "Where are you travelling to:" %>
+    <%= f.select :city_id, @areas.map { |area| [area.city, area.city] }, {}, 
+        { 
+          class: "inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500", 
+          data: { 'aria-haspopup': "true", 'aria-expanded': "true" } 
+        } do %>
+      <% @areas.each do |area| %>
+        <%= content_tag :option, area.city, value: area.city %>
+      <% end %>
+      <svg class="-mr-1 ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+      </svg>
     <% end %>
-  <% end %>
-</div>
-<div class="form-group">
+  </div>
+
+  <div class="form-group">
   <%= f.label :check_in, "Check in:" %>
   <%= f.date_field :check_in, 
       value: Date.today.end_of_week - 2.days, 
-      min: Date.today.end_of_week - 2.days,
-      disabled: true,
-      class: "form-control" %>
-  <%= f.hidden_field :check_in, value: Date.today.end_of_week - 2.days %>
-</div>
-<div class="form-group">
-  <%= f.label :check_out, "Check out:" %>
-    <%= f.date_field :check_out, 
-        value: Date.today.end_of_week, 
-        min: Date.today.end_of_week, 
-        disabled: true,
-        class: "form-control" %>
-    <%= f.hidden_field :check_out, value: Date.today.end_of_week%> 
-</div>
-<div class="form-group">
+      min: Date.today.end_of_week - 2.days %>
+  </div>
+  <div class="form-group">
   <%= f.label :adult_guests, "Who are you going with:" %>
-  <%= f.number_field :adult_guests, value: 2, disabled: true %> Adults
+  <%= f.number_field :adult_guests, value: 2, disabled: true, class: "bg-gray-200 cursor-not-allowed" %> Adults
   <%= f.hidden_field :adult_guests, value: 2 %>
 
-</div>
-<div class="form-group">
+  </div>
+  <div class="form-group">
   <%= f.label :purpose_for_travel, "Purpose for travel?:" %>
-  <%= f.text_field :purpose_for_travel, placeholder: "Family Vaction" %>
+  <%= f.text_field :purpose_for_travel, placeholder: "Family Vaction", class: "border border-gray-300 p-2 rounded-md" %>
+  </div>
+  
+  <%= f.submit "Find deals", class: "bg-white-500 text-black px-4 py-2 rounded-md" %>
+
 </div>
-<%= f.submit "Find deals" %>
+

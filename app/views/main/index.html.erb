@@ -1,3 +1,5 @@
-<%= form_with url: "/main/search", method: :post do |f| %>
-    <%= render partial: 'search_bar/search_bar', locals: { f: f } %>
+<%= form_with url: '/main/search', method: :post, html: { class: "h-screen bg-gray-900 flex items-center justify-center" } do |f| %>
+    <div class="p-8 rounded-lg w-full md:w-3/4">
+      <%= render partial: 'search_bar/search_bar', locals: { f: f } %>
+    </div>
 <% end %>
