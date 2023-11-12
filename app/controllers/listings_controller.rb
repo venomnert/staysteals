@@ -5,7 +5,8 @@ class ListingsController < ApplicationController
   def index
     @areas = Area.fetch_unique_cities
     @city = params[:city]
-    @check_in = params[:check_in]
+    @check_in = params[:check_in].split(", ")[0]
+    @check_out = params[:check_in].split(", ")[1]
     @platform = params[:platform]
     @below_avg = params[:below_avg]
     if @platform != nil
