@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_11_09_122702) do
+ActiveRecord::Schema[7.0].define(version: 2023_11_09_134938) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "btree_gin"
   enable_extension "btree_gist"
@@ -59,7 +59,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_09_122702) do
     t.float "total_price", null: false
     t.text "zip_code"
     t.text "url", null: false
-    t.date "sold_out"
+    t.boolean "sold_out"
     t.float "review"
     t.integer "total_reviews"
     t.bigint "area_id", null: false
