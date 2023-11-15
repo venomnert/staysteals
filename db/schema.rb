@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_11_09_134938) do
+ActiveRecord::Schema[7.0].define(version: 2023_11_14_121618) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "btree_gin"
   enable_extension "btree_gist"
@@ -48,6 +48,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_09_134938) do
     t.index ["state_id"], name: "index_areas_on_state_id"
   end
 
+  create_table "crawlschedules", force: :cascade do |t|
+    t.date "checkin_date", null: false
+    t.date "checkout_date", null: false
+    t.string "platform", null: false
+    t.integer "ran_time", default: 0, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "listings", force: :cascade do |t|
     t.text "name", null: false
     t.string "beds"
@@ -70,7 +79,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_09_134938) do
     t.date "checkout_date"
     t.jsonb "pictures"
     t.string "listing_id"
+    t.bigint "crawlschedule_id"
     t.index ["area_id"], name: "index_listings_on_area_id"
+    t.index ["crawlschedule_id"], name: "index_listings_on_crawlschedule_id"
   end
 
   create_table "pricingavgs", force: :cascade do |t|
@@ -98,5 +109,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_09_134938) do
 
   add_foreign_key "areas", "states"
   add_foreign_key "listings", "areas"
+  add_foreign_key "listings", "crawlschedules"
   add_foreign_key "pricingavgs", "areas"
 end
