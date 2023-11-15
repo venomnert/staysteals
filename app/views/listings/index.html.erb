@@ -1,15 +1,23 @@
 <p style="color: green"><%= notice %></p>
 
-<%= form_with url: "/main/search", method: :post do |f| %>
-  <%= render partial: 'search_bar/search_bar', locals: { f: f } %>
-<% end %>
+<section>
+<div class="w-full relative pb-20">
+  <div
+    class="h-[200px] w-full"
+    style="background: linear-gradient(180deg, #2969bf 0%, #144e9d 100%)"
+  ></div>
+  <div class="w-full absolute z-10 bottom-10 mt-5">
+    <%= form_with url: "/main/search", method: :post, html: { class: "max-w-5xl mx-auto flex px-5 py-3 gap-3 bg-white rounded-lg shadow-md" } do |f| %>
+      <%= render partial: 'search_bar/search_bar', locals: { f: f } %>
+    <% end %>
+  </div>
+</div>
+</section>
 
 <%= link_to 'Filter for VRBO', listings_path(request.parameters.merge({ :platform => 'VRBO'})) %>
 <%= link_to 'Filter for ABNB', listings_path(request.parameters.merge({ :platform => 'ABNB'})) %>
 <%= link_to 'below avg nightly rate', listings_path(request.parameters.merge({ :below_avg => 'true'})) %>
 <%= link_to 'reset', "/" %>
-
-<h1>Listings</h1>
 
 <% if @listings.present? && @listings.exists? %>
   <div id="listings">
