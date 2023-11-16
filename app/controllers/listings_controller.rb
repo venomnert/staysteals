@@ -9,6 +9,7 @@ class ListingsController < ApplicationController
     @check_out = params[:check_in].split(", ")[1]
     @platform = params[:platform]
     @below_avg = params[:below_avg]
+    @count = Listing.default_search_count(@city, @check_in)
     if @platform != nil
       if @below_avg
         @listings = Listing.default_search(@city, @check_in).platform(@platform).below_avg()
