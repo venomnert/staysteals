@@ -1,62 +1,19 @@
 <section>
-  <div class="py-6 w-full flex gap-1">
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-    >
-      <path
-        d="M3.414 13.7779C2.5 13.9999 2 15.1919 2 15.1919C2 15.1919 5.398 15.6259 6.949 17.3129C8.5 18.9999 9.071 22.2629 9.071 22.2629C9.071 22.2629 10.47 22.6979 10.485 20.8489C10.5 18.9999 9.778 17.3129 9.778 17.3129L13.091 13.9999L16.701 21.7039C16.701 21.7039 18.08 22.2299 18.04 20.3649C18 18.4999 16.85 10.2419 16.85 10.2419L19.678 7.41294C19.869 7.22845 20.0214 7.00776 20.1262 6.76375C20.231 6.51974 20.2862 6.2573 20.2885 5.99174C20.2908 5.72619 20.2402 5.46283 20.1396 5.21703C20.0391 4.97124 19.8906 4.74794 19.7028 4.56015C19.515 4.37237 19.2917 4.22386 19.0459 4.1233C18.8001 4.02274 18.5368 3.97213 18.2712 3.97444C18.0056 3.97675 17.7432 4.03192 17.4992 4.13674C17.2552 4.24156 17.0345 4.39392 16.85 4.58494L13.947 7.48794C13.947 7.48794 6.148 6.09394 3.824 6.29694C1.5 6.49994 2.559 7.56294 2.559 7.56294L10.203 11.2329L6.95 14.4859C6.95 14.4859 4.328 13.5559 3.414 13.7779Z"
-        fill="#2F80ED"
-      />
-    </svg>
-    <span class="font-medium text-lg"> StaySteals </span>
-  </div>
-</section>
-
-<section>
-  <div class="w-full relative pb-20">
+  <div class="w-full relative lg:pb-20">
     <%= image_tag "hero_city.png", class: "h-[500px] w-full object-cover rounded-xl" %>
-    <div class="w-full absolute z-10 bottom-10 max-w-7xl mt-5">
-      <%= form_with url: '/main/search', method: :post, html: { class: "max-w-5xl mx-auto flex px-5 py-3 gap-3 bg-white rounded-lg shadow-md" } do |f| %>
+    <div class="w-full lg:absolute z-10 bottom-10 max-w-7xl mt-5">
+      <%= form_with url: '/main/search', method: :post, html: { class: "max-w-5xl mx-auto flex flex-col lg:flex-row px-5 py-3 gap-3 bg-white rounded-lg shadow-md" } do |f| %>
         <%= render partial: 'search_bar/search_bar', locals: { f: f } %>
       <% end %>
     </div>
   </div>
 </section>
 
-<section class="mt-24">
-  <div class="w-full grid grid-cols-2 gap-x-8 gap-y-40">
-    <span>
-      <h2 class="text-2xl font-bold leading-7">How It Works</h2>
-      <p class="mt-10">
-        Plan and book our perfect trip with expert advice, travel tips,
-        destination information and inspiration from us.
-        <br />
-        <br />
-        Plan and book our perfect trip with expert advice, travel tips,
-        destination information and inspiration from us.
-        <br />
-        <br />
-        Plan and book our perfect trip with expert advice, travel tips,
-        destination information and inspiration from us. Plan and book our
-        perfect trip with expert advice, travel tips, destination
-        information and inspiration from us.
-        <br />
-        Plan and book our perfect trip with expert advice, travel tips,
-        destination information and inspiration from us.
-        <br />
-        Plan and book our perfect trip with expert advice, travel tips,
-        destination information and inspiration from us.
-      </p>
-    </span>
-    <%= image_tag "lost_traveller_1.png", class: "rounded-lg" %>
-    <%= image_tag "lost_traveller_2.png", class: "rounded-lg" %>
-    <span class="text-end">
+<section class="lg:mt-24 mt-14">
+  <div class="w-full grid lg:grid-cols-2 grid-cols-1 gap-x-8 lg:gap-y-40 gap-y-10">
+    <div>
       <h3 class="text-2xl font-thin">How It Works</h3>
-      <p class="mt-10">
+      <p class="lg:mt-10 mt-5">
         Plan and book our perfect trip with expert advice, travel tips,
         destination information and inspiration from us.
         <br />
@@ -76,58 +33,39 @@
         Plan and book our perfect trip with expert advice, travel tips,
         destination information and inspiration from us.
       </p>
-    </span>
-  </div>
-</section>
-
-<section class="mt-40">
-  <div
-    class="max-w-7xl mx-auto h-[280px] w-full relative flex overflow-hidden"
-  >
-    <img
-      src="https://s3-alpha-sig.figma.com/img/5af5/48f1/18977848faf9485f0bb6f22846c294d3?Expires=1700438400&Signature=ebEJhBFyvzyPz18GDMcwZfLcSMLErdUGnqGNOhg~bEVQja3hQg2JrJOJcYv3bEaG3HlM~mQDq2PlXdjCslHxxMRHyjQPfLr8Kc4FC-qL5-Sf0YIeDsPjMSsdboUV1qnITzy3A-iGNwK9olLDLmAR5V3byMcgZkareaMaTQzWi9kn9LbXtr3eiRrByHjxD6rmWIpjNj~tCgup1TFFCDBMxuYeavd-1xLCnvlYYTBPwvX8NF0h59qGpx04PhfhC6GTmQ6Ev2MRkTuWxObmH2Fn~dB2uw1Ky6VA7r91o4DfMeeAjFJDZdHE8ndeK0vBhq2CYucG7RxTCvRjIPI48TE-9g__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
-      class="h-full object-cover w-full transform scale-[-1] rounded-lg"
-      alt="beach"
-    />
-    <img
-      src="https://s3-alpha-sig.figma.com/img/a4bd/f9f9/d9947b42ad45969a7cf5911e402568fa?Expires=1700438400&Signature=f2vhxKrNICkd-PREQ4jAQnrdWrOU2hT8O21N97e8BibMJl83KFwMqU4QYIY88x30IyhVBWxybuvgCKGgHzHciHFgDf0tnMlp8ZS5tqP7ri-t17BLAz9wgHQ9gcclbgUmIINO74o2~812kwjna7w3e8f9UwasXZ8~ZKHByT9HJd8ARtViDA0vH3~lWI0bdLUuwVG3nPB4iMu9T~CIVUq4IUa6ybkgPlxk0RIt~ySRH35JTN70IFp26O8cawvObXj0woxw~WnKyRIx9AbLJ3XkNJNZLGSjlJOXCRN99Ktkj47pcL-ZUBXxAZozZoqfqB7F~-tciq4ELlsVMVD8RaW0oA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
-      alt="phone"
-      class="absolute z-10 w-[720px] right-0 bottom-[-150px]"
-      style="transform: rotate(-15deg)"
-    />
-    <div class="absolute z-10 flex flex-col gap-5 ml-16 mt-16">
-      <h3 class="text-4xl font-medium text-white">
-        Subscribe To Our Newsletter
-      </h3>
-      <input
-        type="text"
-        placeholder="Email Address"
-        class="p-3 w-2/3 rounded focus:outline-none"
-      />
     </div>
-  </div>
-</section>
-
-<!-- Footer -->
-<section class="mt-32">
-  <div class="max-w-7xl mx-auto w-full grid grid-cols-5 gap-14">
-    <div class="flex flex-col gap-2">
-      <div class="flex items-center gap-2">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-        >
-          <path
-            d="M3.414 13.778C2.5 14 2 15.192 2 15.192C2 15.192 5.398 15.626 6.949 17.313C8.5 19 9.071 22.263 9.071 22.263C9.071 22.263 10.47 22.698 10.485 20.849C10.5 19 9.778 17.313 9.778 17.313L13.091 14L16.701 21.704C16.701 21.704 18.08 22.23 18.04 20.365C18 18.5 16.85 10.242 16.85 10.242L19.678 7.413C19.869 7.22851 20.0214 7.00782 20.1262 6.76381C20.231 6.5198 20.2862 6.25736 20.2885 5.99181C20.2908 5.72625 20.2402 5.46289 20.1396 5.21709C20.0391 4.9713 19.8906 4.748 19.7028 4.56021C19.515 4.37243 19.2917 4.22392 19.0459 4.12336C18.8001 4.0228 18.5368 3.97219 18.2712 3.9745C18.0056 3.97681 17.7432 4.03198 17.4992 4.1368C17.2552 4.24162 17.0345 4.39398 16.85 4.585L13.947 7.488C13.947 7.488 6.148 6.09401 3.824 6.297C1.5 6.5 2.559 7.563 2.559 7.563L10.203 11.233L6.95 14.486C6.95 14.486 4.328 13.556 3.414 13.778Z"
-            fill="#2F80ED"
-          />
-        </svg>
-        <strong class="text-lg">my Dream Place</strong>
-      </div>
-      <p class="ml-8 text-sm text-[#4F4F4F]">Your next goto companion for travel</p>
+    <img
+      src="https://s3-alpha-sig.figma.com/img/6390/7bbf/e1389fbfd0626d0dbbf233f324dc4d3c?Expires=1700438400&Signature=jnd2bpNMMIzRscOUARsMUwor0Fdy4gCofCC81FR8KtBI0uPdBdjlGQf7EnkJcl~EI5Y8JTeXEyLbWTYuMxA4eE6QQpAc1BKsHGSGJnVulHGIOLs19gLtVwbBRdTPbI31WnRZRRFeOh0A1hDcUzYSV-kH4SVOmU1ZvSnY5qYkEOSRWEcI-tWvIJhbzkBcdIy2jRDYPulNgz859yxAYaHebuPtPFJp9BnUVzRh3n6jKIbEam~vM~CJAvS85UhtdlWc2L1m1odUlW9S-fFgpvh5zepfgAYOsyYWpgrVJJbDD2UoTu0kRtaQik~8N8xCuxoqa-~ez7bmlcKni04znm3kNg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
+      alt="img-1"
+      class="rounded-lg max-sm:mb-4"
+    />
+    <img
+      src="https://s3-alpha-sig.figma.com/img/6390/7bbf/e1389fbfd0626d0dbbf233f324dc4d3c?Expires=1700438400&Signature=jnd2bpNMMIzRscOUARsMUwor0Fdy4gCofCC81FR8KtBI0uPdBdjlGQf7EnkJcl~EI5Y8JTeXEyLbWTYuMxA4eE6QQpAc1BKsHGSGJnVulHGIOLs19gLtVwbBRdTPbI31WnRZRRFeOh0A1hDcUzYSV-kH4SVOmU1ZvSnY5qYkEOSRWEcI-tWvIJhbzkBcdIy2jRDYPulNgz859yxAYaHebuPtPFJp9BnUVzRh3n6jKIbEam~vM~CJAvS85UhtdlWc2L1m1odUlW9S-fFgpvh5zepfgAYOsyYWpgrVJJbDD2UoTu0kRtaQik~8N8xCuxoqa-~ez7bmlcKni04znm3kNg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
+      alt="img-1"
+      class="rounded-lg"
+    />
+    <div class="lg:text-end">
+      <h3 class="text-2xl font-thin">How It Works</h3>
+      <p class="lg:mt-10 mt-5">
+        Plan and book our perfect trip with expert advice, travel tips,
+        destination information and inspiration from us.
+        <br />
+        <br />
+        Plan and book our perfect trip with expert advice, travel tips,
+        destination information and inspiration from us.
+        <br />
+        <br />
+        Plan and book our perfect trip with expert advice, travel tips,
+        destination information and inspiration from us. Plan and book our
+        perfect trip with expert advice, travel tips, destination
+        information and inspiration from us.
+        <br />
+        Plan and book our perfect trip with expert advice, travel tips,
+        destination information and inspiration from us.
+        <br />
+        Plan and book our perfect trip with expert advice, travel tips,
+        destination information and inspiration from us.
+      </p>
     </div>
   </div>
 </section>
