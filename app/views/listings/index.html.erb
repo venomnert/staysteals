@@ -1,31 +1,46 @@
 <p style="color: green"><%= notice %></p>
 
 <section>
-<div class="w-full relative pb-20">
-  <div
-    class="h-[200px] w-full"
-    style="background: linear-gradient(180deg, #2969bf 0%, #144e9d 100%)"
-  ></div>
-  <div class="w-full absolute z-10 bottom-10 mt-5">
-    <%= form_with url: "/main/search", method: :post, html: { class: "max-w-5xl mx-auto flex px-5 py-3 gap-3 bg-white rounded-lg shadow-md" } do |f| %>
-      <%= render partial: 'search_bar/search_bar', locals: { f: f } %>
-    <% end %>
+  <div class="w-full relative lg:pb-20 pb-10">
+    <div class="h-[200px] w-full" style="background: linear-gradient(180deg, #2969bf 0%, #144e9d 100%)"></div>
+    <div class="w-full lg:absolute z-10 bottom-10 mt-5">
+      <%= form_with url: "/main/search", method: :post, html: { class: "max-w-5xl mx-auto flex flex-col lg:flex-row px-5 py-3 gap-3 bg-white rounded-lg shadow-md" } do |f| %>
+        <%= render partial: 'search_bar/search_bar', locals: { f: f } %>
+      <% end %>
+    </div>
   </div>
-</div>
 </section>
 
-<%= link_to 'Filter for VRBO', listings_path(request.parameters.merge({ :platform => 'VRBO'})) %>
-<%= link_to 'Filter for ABNB', listings_path(request.parameters.merge({ :platform => 'ABNB'})) %>
-<%= link_to 'below avg nightly rate', listings_path(request.parameters.merge({ :below_avg => 'true'})) %>
-<%= link_to 'reset', "/" %>
-
-<% if @listings.present? && @listings.exists? %>
-  <div id="listings">
-    <% @listings.each do |listing| %>
-      <%= render listing %>
-    <% end %>
+<section>
+  <h2 class="font-thin text-2xl lg:col-span-2 text-center"><%= @city %> : <%= @count %> search results found</h2>
+  <div class="max-w-7xl mx-auto w-full px-5">
+    <div class="flex flex-col border border-[#E0E0E0] rounded-md">
+        <div class="bg-[#F2F2F2] p-5 rounded-t-md">
+          <p>Filter by</p>
+        </div>
+        <div class="flex flex-col gap-2 p-5 rounded-b-md">
+          <div class="flex gap-2 items-center">
+            <%= link_to 'ABNB', listings_path(request.parameters.merge({ :platform => 'ABNB'})), class: "text-[#333333] text-md" %>
+          </div>
+          <div class="flex gap-2 items-center">
+            <%= link_to 'VRBO', listings_path(request.parameters.merge({ :platform => 'VRBO'})), class: "text-[#333333] text-md" %>
+          </div>
+          <div class="flex gap-2 items-center">
+            <%= link_to 'Below AVG Nightly Rate', listings_path(request.parameters.merge({ :below_avg => 'true'})), class: "text-[#333333] text-md" %>
+          </div>
+        </div>
+    </div>
+    <div class="lg:col-span-2 col-span-3 flex flex-col gap-5">
+      <% if @listings.present? && @listings.exists? %>
+        <div id="listings">
+          <% @listings.each do |listing| %>
+            <%= render listing %>
+          <% end %>
+        </div>
+        <%== pagy_nav(@pagy).html_safe %>
+      <% else %>
+        <p>No listings available.</p>
+      <% end %>
+    </div>
   </div>
-  <%== pagy_nav(@pagy) %>
-<% else %>
-  <p>No listings available.</p>
-<% end %>
+</section>

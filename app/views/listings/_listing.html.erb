@@ -1,4 +1,4 @@
-<div id="<%= dom_id listing %>" class="w-full border border-[#E0E0E0] rounded-md p-5 lg:grid lg:grid-cols-3 flex flex-col gap-5">
+<div id="<%= dom_id listing %>" class="w-full border border-[#E0E0E0] rounded-md p-5 lg:grid lg:grid-cols-3 flex flex-col gap-5 my-3">
   <% if listing.pictures != nil && listing.pictures.first %>
     <p>
       <%= image_tag listing.pictures.first[1], class: "rounded-md" %>
@@ -10,7 +10,8 @@
   <% end %>
 
   <div class="col-span-2 flex flex-col gap-2 w-full relative">
-    <h3 class="text-xl font-medium"><%= listing.name %> - <%= listing.beds %></h3>
+    <h2 class="text-xl font-medium w-3/4"><%= listing.name %></h2>
+    <h3 class="text-xl font-medium"><%= listing.beds %></h3>
     <div class="lg:absolute z-10 right-0 rounded-md px-2 py-1 text-xs text-white <%= listing.platform == 'ABNB' ? 'bg-[#ff385c]' : 'bg-[#0e214b]' %>">
       <span class="font-medium"><%= listing.platform %></span>
     </div>
