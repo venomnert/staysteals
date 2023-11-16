@@ -1,4 +1,4 @@
-class Area < ApplicationRecord
+class CrawlSchedule < ApplicationRecord
   has_many :listings
 
 end
