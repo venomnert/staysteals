@@ -2,7 +2,7 @@
 
 <section>
   <div class="w-full relative lg:pb-20 pb-10">
-    <div class="h-[200px] w-full" style="background: linear-gradient(180deg, #2969bf 0%, #144e9d 100%)"></div>
+    <%= image_tag "hero_city.png", class: "h-[250px] w-full object-cover rounded-xl" %>
     <div class="w-full lg:absolute z-10 bottom-10 mt-5">
       <%= form_with url: "/main/search", method: :post, html: { class: "max-w-5xl mx-auto flex flex-col lg:flex-row px-5 py-3 gap-3 bg-white rounded-lg shadow-md" } do |f| %>
         <%= render partial: 'search_bar/search_bar', locals: { f: f } %>
@@ -39,7 +39,9 @@
         </div>
         <%== pagy_nav(@pagy).html_safe %>
       <% else %>
-        <p>No listings available.</p>
+        <h2 class="mt-5 text-2xl text-center">No listings available at the momment.</h2>
+        
+        <%= image_tag "lost_traveller_2.png", class: "mx-auto rounded-lg w-2/3" %>
       <% end %>
     </div>
   </div>

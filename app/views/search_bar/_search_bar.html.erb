@@ -14,7 +14,7 @@
   <%= f.label :city_id, "Destination" %>
   <%= f.select :city_id, @areas.map { |area| [area.city, area.city] }, {}, 
       { 
-        class: "bg-[#F2F2F2] focus:outline-none", 
+        class: "bg-[#F2F2F2] focus:outline-none p-2", 
         data: { 'aria-haspopup': "true", 'aria-expanded': "true" } 
       } do %>
     <% @areas.each do |area| %>
