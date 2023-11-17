@@ -82,3 +82,5 @@ gem "sentry-rails", "~> 5.10"
 gem "pagy", "~> 6.1"
 
 gem "tailwindcss-rails", "~> 2.0"
+
+gem "flatpickr"
