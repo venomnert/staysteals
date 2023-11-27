@@ -1,64 +1,24 @@
 <section>
-  <div class="w-full relative lg:pb-20">
-    <%= image_tag "hero_city.png", class: "h-[500px] w-full object-cover rounded-xl" %>
-    <div class="w-full lg:absolute z-10 bottom-10 max-w-7xl mt-5">
+  <div style="background-image: url(<%= asset_path 'hero_m.png' %> ); background-position-y: 85px;" class="bg-contain bg-no-repeat flex flex-col h-[975px] justify-between md:hidden rounded-xl w-full">
+    <div class="p-4 bg-[#2F80ED]">
+      <h1 class="mb-4 text-2xl font-extrabold text-gray-900 dark:text-white">Last-Min. Weekend Deals</h1>
+      <h2 class="font-normal text-gray-500 text-lg dark:text-white">Save up to 70% on Top U.S. Destinations. Compare Airbnb & VRBO for the best vacation stays.</h2>
+    </div>
+    <div class="w-full lg:absolute z-10 bottom-10 max-w-7xl">
       <%= form_with url: '/main/search', method: :post, html: { class: "max-w-5xl mx-auto flex flex-col lg:flex-row px-5 py-3 gap-3 bg-white rounded-lg shadow-md" } do |f| %>
         <%= render partial: 'search_bar/search_bar', locals: { f: f } %>
       <% end %>
     </div>
   </div>
-</section>
-
-<section class="lg:mt-24 mt-14">
-  <div class="w-full grid lg:grid-cols-2 grid-cols-1 gap-x-8 lg:gap-y-40 gap-y-10">
-    <div>
-      <h3 class="text-2xl font-thin">How It Works</h3>
-      <p class="lg:mt-10 mt-5">
-        Plan and book our perfect trip with expert advice, travel tips,
-        destination information and inspiration from us.
-        <br />
-        <br />
-        Plan and book our perfect trip with expert advice, travel tips,
-        destination information and inspiration from us.
-        <br />
-        <br />
-        Plan and book our perfect trip with expert advice, travel tips,
-        destination information and inspiration from us. Plan and book our
-        perfect trip with expert advice, travel tips, destination
-        information and inspiration from us.
-        <br />
-        Plan and book our perfect trip with expert advice, travel tips,
-        destination information and inspiration from us.
-        <br />
-        Plan and book our perfect trip with expert advice, travel tips,
-        destination information and inspiration from us.
-      </p>
+  <div style="background-image: url(<%= asset_path 'hero_d.png' %> ); background-position-y: 85px;" class="bg-contain bg-no-repeat flex-col h-[700px] hidden justify-between rounded-xl sm:flex w-full">
+    <div class="p-4 bg-[#2F80ED]">
+      <h1 class="mb-4 text-4xl font-extrabold text-gray-900 md:text-5xl lg:text-6xl dark:text-white">Last-Min. Weekend Deals</h1>
+      <h2 class="dark:text-white lg:text-xl">Save up to 70% on Top U.S. Destinations. Compare Airbnb & VRBO for the best vacation stays.</h2>
     </div>
-    <%= image_tag "lost_traveller_1.png", class: "rounded-lg max-sm:mb-4" %>
-
-    <%= image_tag "how_it_works_2.png", class: "rounded-lg" %>
-    <div class="lg:text-end">
-      <h3 class="text-2xl font-thin">How It Works</h3>
-      <p class="lg:mt-10 mt-5">
-        Plan and book our perfect trip with expert advice, travel tips,
-        destination information and inspiration from us.
-        <br />
-        <br />
-        Plan and book our perfect trip with expert advice, travel tips,
-        destination information and inspiration from us.
-        <br />
-        <br />
-        Plan and book our perfect trip with expert advice, travel tips,
-        destination information and inspiration from us. Plan and book our
-        perfect trip with expert advice, travel tips, destination
-        information and inspiration from us.
-        <br />
-        Plan and book our perfect trip with expert advice, travel tips,
-        destination information and inspiration from us.
-        <br />
-        Plan and book our perfect trip with expert advice, travel tips,
-        destination information and inspiration from us.
-      </p>
+    <div class="w-full z-10 bottom-10 max-w-7xl">
+      <%= form_with url: '/main/search', method: :post, html: { class: "max-w-5xl mx-auto flex flex-col lg:flex-row px-5 py-3 gap-3 bg-white rounded-lg shadow-md" } do |f| %>
+        <%= render partial: 'search_bar/search_bar', locals: { f: f } %>
+      <% end %>
     </div>
   </div>
 </section>

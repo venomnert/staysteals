@@ -2,7 +2,7 @@
 
 <section>
   <div class="w-full relative lg:pb-20 pb-10">
-    <%= image_tag "hero_city.png", class: "h-[250px] w-full object-cover rounded-xl" %>
+    <%= image_tag "hero_d.png", class: "h-[250px] w-full object-cover rounded-xl" %>
     <div class="w-full lg:absolute z-10 bottom-10 mt-5">
       <%= form_with url: "/main/search", method: :post, html: { class: "max-w-5xl mx-auto flex flex-col lg:flex-row px-5 py-3 gap-3 bg-white rounded-lg shadow-md" } do |f| %>
         <%= render partial: 'search_bar/search_bar', locals: { f: f } %>
@@ -12,7 +12,7 @@
 </section>
 
 <section>
-  <h2 class="font-thin text-2xl lg:col-span-2 text-center"><%= @city %> : <%= @count %> search results found</h2>
+  <h2 id="found-listings" class="font-thin text-2xl lg:col-span-2 text-center"><%= @city %> : <%= @count %> search results found</h2>
   <div class="max-w-7xl mx-auto w-full px-5">
     <div class="flex flex-col border border-[#E0E0E0] rounded-md">
         <div class="bg-[#F2F2F2] p-5 rounded-t-md">
@@ -37,7 +37,9 @@
             <%= render listing %>
           <% end %>
         </div>
-        <%== pagy_nav(@pagy).html_safe %>
+        <div class="flex w-full items-center justify-center gap-4 mt-10 col-span-2">
+          <%== pagy_nav(@pagy).html_safe %>
+        </div>
       <% else %>
         <h2 class="mt-5 text-2xl text-center">No listings available at the momment.</h2>
         
@@ -46,3 +48,5 @@
     </div>
   </div>
 </section>
+
+<div class="AW-Form-684533932 mt-20"></div>

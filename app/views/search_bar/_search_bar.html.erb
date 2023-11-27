@@ -103,7 +103,7 @@
       stroke-linejoin="round"
     />
   </svg>
-  <%= f.label :check_in, "Check in & Check out:" %>
+  <%= f.label :check_in, "Weekends:" %>
   <%= f.date_field :check_in,
       class: "bg-[#F2F2F2]",
       value: Date.today.end_of_week - 2.days, 
@@ -178,8 +178,8 @@
     </defs>
   </svg>
   <%= f.label :purpose_for_travel, "Tavel Reason?" %>
-  <%= f.text_field :purpose_for_travel, placeholder: "Family Vaction", class: "bg-[#F2F2F2] focus:outline-none" %>
+  <%= f.text_field :purpose_for_travel, placeholder: "Family Vacation", class: "bg-[#F2F2F2] focus:outline-none" %>
 </div>
 
-<%= f.submit "Find deals", class: "bg-[#2F80ED] w-full text-white rounded-md hover:bg-blue-600 duration-150 hover:bg-sky-700 cursor-pointer" %>
+<%= f.submit "Find deals", class: "find-deal bg-[#2F80ED] w-full text-white rounded-md hover:bg-blue-600 duration-150 hover:bg-sky-700 cursor-pointer" %>
 
