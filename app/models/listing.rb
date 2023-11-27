@@ -7,6 +7,7 @@ class Listing < ApplicationRecord
     .select("DISTINCT ON (listings.listing_id) listings.*")
     .where("areas.city = :city AND DATE(listings.checkin_date) = DATE(:check_in) AND listings.price_per_night > 0 AND listings.total_reviews > 0", city: city, check_in: check_in)
     .where(sold_out: nil)
+    .where.not("pictures = '{}' OR pictures IS NULL")
   }
   
   def self.default_search_count(city, check_in) 
