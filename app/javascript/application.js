@@ -33,5 +33,8 @@ document.addEventListener("turbo:load", function () {
         let date = getNextFriday();
         return new Date(date.setDate(date.getDate() + 28));
     }
-    document.scrollIntoView("#listings")
+    let found_listing = document.querySelector("#found-listings");
+    if (found_listing !== null) {
+        found_listing.scrollIntoView();
+    }
 })
