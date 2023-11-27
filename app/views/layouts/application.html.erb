@@ -13,10 +13,27 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JCM6G8VJTH"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-JCM6G8VJTH');
+    </script>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WF5B7JR5');</script>
+
+    <script type="text/javascript" src="//script.crazyegg.com/pages/scripts/0121/2389.js" async="async"></script>
   </head>
 
-  <body class="max-w-7xl mx-auto min-h-screen pb-20 px-5">
-    <section>
+  <body class="max-w-7xl min-h-screen mx-auto px-5">
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WF5B7JR5" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <nav>
       <%= link_to '/' do %>
         <div class="py-6 w-full flex gap-1">
           <svg
@@ -34,22 +51,11 @@
           <span class="font-medium text-lg"> StaySteal</span>
         </div>
       <% end %>
-    </section>
+    </nav>
 
     <%= yield %>
 
-    <section class="lg:mt-40 mt-20">
-      <div class="max-w-7xl mx-auto h-[280px] w-full relative flex overflow-hidden">
-        <%= image_tag "newsletter.png", class: "h-full object-cover w-full rounded-lg" %>
-        <div class="absolute z-10 flex flex-col gap-5 lg:ml-16 lg:mt-16 items-center justify-center lg:items-start lg:justify-start h-full">
-          <h3 class="lg:text-4xl text-2xl font-medium text-white text-center bg-[#ff385c]">
-            Subscribe To Our Newsletter
-          </h3>
-          <input type="text" placeholder="Email Address" class="p-3 w-2/3 rounded focus:outline-none" />
-        </div>
-      </div>
-    </section>
-    <section class="lg:mt-32 mt-20 px-5">
+    <footer class="lg:mt-32 mt-20 px-5">
       <div class="max-w-7xl mx-auto w-full grid lg:grid-cols-5 lg:gap-14 gap-5">
         <div class="flex flex-col gap-2">
           <div class="flex items-center gap-2">
@@ -70,6 +76,14 @@
           <p class="ml-8 text-sm text-[#4F4F4F]">Your next goto companion for travel</p>
         </div>
       </div>
-    </section>
+    </footer>
+    <script type="text/javascript">(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//forms.aweber.com/form/32/684533932.js";
+      fjs.parentNode.insertBefore(js, fjs);
+      }(document, "script", "aweber-wjs-hm8sklyim"));
+    </script>
   </body>
 </html>
