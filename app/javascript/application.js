@@ -4,11 +4,16 @@ import "controllers"
 import flatpickr from "flatpickr"
 
 document.addEventListener("turbo:load", function () {
+    const urlParams = new URLSearchParams(window.location.search);
+    const check_in = urlParams.get('check_in');
 
     let calendar = flatpickr("#check_in", {
         mode: "multiple",
         minDate: getNextFriday(),
         maxDate: getFourWeeksFromNextFriday(),
+        onOpen: function (selectedDates, dateStr, instance) {
+            instance.clear();
+        },
         disable: [
             function (date) {
                 // days in JS are from 0 to 6 where 0 is Sunday and 6 is Saturday
@@ -16,6 +21,12 @@ document.addEventListener("turbo:load", function () {
             }
         ]
     });
+
+    if (check_in !== null) {
+        const check_in_date = new Date(check_in);
+        console.log(check_in)
+        calendar.setDate(check_in);
+    }
 
     function getNextFriday() {
         let date = new Date();
