@@ -12,7 +12,7 @@ class ListingsController < ApplicationController
     @count = Listing.default_search_count(@city, @check_in)
     if @platform != nil
       if @below_avg
-        @listings = Listing.default_search(@city, @check_in).platform(@platform).below_avg()
+        @listings = Listing.default_search(@city, @check_in).below_avg().platform(@platform)
       else
         @listings = Listing.default_search(@city, @check_in).platform(@platform)
       end
