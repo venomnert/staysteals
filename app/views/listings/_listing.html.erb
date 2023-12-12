@@ -1,4 +1,4 @@
-<div id="<%= dom_id listing %>" class="w-full border border-[#E0E0E0] rounded-md p-5 lg:grid lg:grid-cols-3 flex flex-col gap-5 my-3">
+<div id="<%= dom_id listing %>" class="w-full border border-[#E0E0E0] rounded-md p-0 md:p-5 lg:grid lg:grid-cols-3 flex flex-col gap-5 my-3">
   <% if listing.pictures != nil && listing.pictures.first %>
     <p>
       <%= image_tag listing.pictures.first[1], class: "rounded-md" %>
@@ -9,7 +9,7 @@
     </p>
   <% end %>
 
-  <div class="col-span-2 flex flex-col gap-2 w-full relative">
+  <div class="p-4 col-span-2 flex flex-col gap-2 w-full relative">
     <h2 class="text-xl font-medium w-3/4"><%= listing.name %></h2>
     <h3 class="text-xl font-medium"><%= listing.beds %></h3>
     <div class="lg:absolute z-10 right-0 rounded-md px-2 py-1 text-xs text-white <%= listing.platform == 'ABNB' ? 'bg-[#ff385c]' : 'bg-[#0e214b]' %>">
@@ -33,14 +33,14 @@
     <div class="flex items-center justify-between mb-2">
       <div class="flex flex-col w-full">
         <div class="flex">
-          <p class="text-sm font-medium <%= 'line-through decoration-red-500 decoration-2' if listing.discounted_price > 0 && listing.discount_percentage <= 1 %>">Price per night: $<%= listing.price_per_night %></p>
+          <p class="text-sm font-extrabold mb-1 <%= 'line-through decoration-red-500 decoration-2' if listing.discounted_price > 0 && listing.discount_percentage <= 1 %>">Price per night: $<%= listing.price_per_night %></p>
           <% if listing.discounted_price > 0 && listing.discount_percentage <= 1 %>
             <p class="text-sm font-medium ml-3">Discounted per night: $<%= listing.discounted_price %></p> 
           <% end %>
         </div>
-        <p class="text-sm font-medium">Host Fee: $<%= listing.host_fee %></p>
-        <p class="text-sm font-medium">Platform Fee: $<%= listing.platform_fee %></p>
-        <p class="text-sm font-medium">Total Price: $<%= listing.total_price %></p>
+        <p class="text-sm">+ Host Fee: $<%= listing.host_fee %></p>
+        <p class="text-sm">+ Platform Fee: $<%= listing.platform_fee %></p>
+        <p class="text-sm font-extrabold mt-1">Total Price: $<%= listing.total_price %></p>
       </div>
     </div>
 

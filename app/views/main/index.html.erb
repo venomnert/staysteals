@@ -2,10 +2,10 @@
   <div style="background-image: url(<%= asset_path 'hero_m.png' %> ); background-position-y: 85px;" class="bg-contain bg-no-repeat flex flex-col h-[975px] justify-between md:hidden rounded-xl w-full">
     <div class="p-4 bg-[#2F80ED]">
       <h1 class="mb-4 text-2xl font-extrabold text-gray-900 dark:text-white">Last-Min. Weekend Deals</h1>
-      <h2 class="font-normal text-gray-500 text-lg dark:text-white">Save up to 70% on Top U.S. Destinations. Compare Airbnb & VRBO for the best vacation stays.</h2>
+      <h2 class="font-normal text-lg dark:text-white">Save up to 70% on Top U.S. Destinations. Compare Airbnb & VRBO for the best vacation stays.</h2>
     </div>
     <div class="w-full lg:absolute z-10 bottom-10 max-w-7xl">
-      <%= form_with url: '/main/search', method: :post, html: { class: "max-w-5xl mx-auto flex flex-col lg:flex-row px-5 py-3 gap-3 bg-white rounded-lg shadow-md" } do |f| %>
+      <%= form_with url: '/main/search', method: :post, html: { class: "max-w-5xl mx-auto flex flex-col lg:flex-row gap-3 bg-white rounded-lg shadow-md" } do |f| %>
         <%= render partial: 'search_bar/search_bar', locals: { f: f } %>
       <% end %>
     </div>

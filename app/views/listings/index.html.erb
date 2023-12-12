@@ -13,17 +13,17 @@
 
 <section>
   <h2 id="found-listings" class="font-thin text-2xl lg:col-span-2 text-center"><%= @city %> : <%= @count %> search results found</h2>
-  <div class="max-w-7xl mx-auto w-full px-5">
+  <div class="max-w-7xl mx-auto w-full md:px-5">
     <div class="flex flex-col border border-[#E0E0E0] rounded-md">
         <div class="bg-[#F2F2F2] p-5 rounded-t-md">
           <p>Filter by</p>
         </div>
-        <div class="flex flex-col gap-2 p-5 rounded-b-md">
-          <div class="flex gap-2 items-center">
+        <div class="flex gap-2 p-5">
+          <div class="flex gap-2 items-center pr-2 border-r-2 border-r-black">
             <%= link_to 'ABNB', listings_path(request.parameters.merge({ :platform => 'ABNB'})), class: "text-[#333333] text-md" %>
           </div>
-          <div class="flex gap-2 items-center">
-            <%= link_to 'VRBO', listings_path(request.parameters.merge({ :platform => 'VRBO'})), class: "text-[#333333] text-md" %>
+          <div class="flex gap-2 items-center pr-2 border-r-2 border-r-black">
+          <%= link_to 'VRBO', listings_path(request.parameters.merge({ :platform => 'VRBO'})), class: "text-[#333333] text-md" %>
           </div>
           <div class="flex gap-2 items-center">
             <%= link_to 'Below AVG Nightly Rate', listings_path(request.parameters.merge({ :below_avg => 'true'})), class: "text-[#333333] text-md" %>
